@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Shim to ensure window.fetch has both getter and setter in sandboxed iframe environments
+      (function() {
+        try {
+          var _currentFetch = window.fetch;
+          var proto = Object.getPrototypeOf(window);
+          try {
+            Object.defineProperty(window, 'fetch', {
+              get: function() {
+                return _currentFetch;
+              },
+              set: function(fn) {
+                _currentFetch = fn;
+              },
+              configurable: true,
+              enumerable: true
+            });
+          } catch (e1) {
+            if (proto) {
+              try {
+                Object.defineProperty(proto, 'fetch', {
+                  get: function() {
+                    return _currentFetch;
+                  },
+                  set: function(fn) {
+                    _currentFetch = fn;
+                  },
+                  configurable: true,
+                  enumerable: true
+                });
+              } catch (e2) {}
+            }
+          }
+        } catch (err) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indian Income Tax & ITR-U Calculator</title>
+    <meta name="description" content="Professional Indian Income Tax, Advance Tax, 234A/B/C Interest, Section 139(8A) ITR-U, Assessment Order & CIT(A) Demand Calculator, and Yearwise Rates Directory" />
+    <meta property="og:title" content="Indian Income Tax & ITR-U Calculator" />
+    <meta property="og:description" content="Professional Indian Income Tax, Advance Tax, 234A/B/C Interest, Section 139(8A) ITR-U, Assessment Order & CIT(A) Demand Calculator, and Yearwise Rates Directory" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

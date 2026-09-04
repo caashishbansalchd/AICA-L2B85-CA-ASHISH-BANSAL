@@ -1,0 +1,11 @@
+{
+  "scripts": [],
+  "assets": [
+    "dist/index.html",
+    "dist/assets/**/*"
+  ],
+  "targets": [
+    "node18-win-x64"
+  ],
+  "outputPath": "public"
+}

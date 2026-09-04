@@ -1,0 +1,6 @@
+{
+  "name": "Indian Income Tax & ITR-U Calculator",
+  "description": "Professional Indian Income Tax, Advance Tax, 234A/B/C Interest, Section 139(8A) ITR-U, Assessment Order & CIT(A) Demand Calculator, and Yearwise Rates Directory",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
